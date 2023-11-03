@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ES">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+        <title>Oro Ninja</title>
+    </head>
+    <body>
+        <section>
+            <div class="tu_oro">
+                <h1 id="titulo_tu_oro">Tu oro:</h1>
+                <h1 id="cantidad_oro">{{session.mioro}} </h1>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="place">
+                    <form action="/process_money" method="post">
+                        <h1>Farm</h1>
+                        <p>(earns 10 - 20 golds)</p>
+                        <input type="hidden" name="building" value="farm" />
+                        <input type="submit" value="Find Gold!"/>
+                    </form>
+                </div>
+                <div class="place">
+                    <form action="/process_money" method="post">
+                        <h1>Cave</h1>
+                        <p>(earns 5 - 10 golds)</p>
+                        <input type="hidden" name="building" value="cave" />
+                        <input type="submit" value="Find Gold!"/>
+                    </form>
+                </div>
+                <div class="place">
+                    <form action="/process_money" method="post">
+                        <h1>House</h1>
+                        <p>(earns 2 - 20 golds)</p>
+                        <input type="hidden" name="building" value="house" />
+                        <input type="submit" value="Find Gold!"/>
+                    </form>
+                </div>
+                <div class="place">
+                    <form action="/process_money" method="post">
+                        <h1>Casino</h1>
+                        <p>(earns 0 - 50 golds)</p>
+                        <input type="hidden" name="building" value="casino" />
+                        <input type="submit" value="Find Gold!"/>
+                    </form>
+                </div>
+            </div>
+            <div>
+                <form action="/process_money" method="post">
+                    <input type="hidden" name="building" value="pop" />
+                    <input type="submit" value="Reiniciar"/>
+                </form>
+                
+            </div>
+        </section>
+    </body>
+</html>
